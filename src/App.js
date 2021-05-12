@@ -6,12 +6,13 @@ import SignUp from './pages/signUp'
 import React from 'react';
 import axios from 'axios';
 export default class App extends React.Component {
-  state={}
+  state={};
   componentDidMount() {
     axios.get("lectures").then(
       (res) => {
-        console.log(res.data,'res daata in  lecures page')
-       this.setLectures(res.data)
+        console.log('componentdidmount')
+        console.log(res.data,'res daata in  lecures')
+        this.setLectures(res.data)
       },
       (err) => {
         console.log(err);
@@ -36,13 +37,13 @@ export default class App extends React.Component {
           <Login setLectures={this.setLectures} />
         </Route>
         <Route path="/lectures">
-          <Lectures lectures={this.state.lectures}/>
+          <Lectures lectures={this.state.lectures} setLectures={this.setLectures}/>
         </Route>
         <Route path="/signUp">
           <SignUp />
         </Route>
         <Route path="/">
-        `<Redirect to="/login" />
+        <Redirect to="/login"/>
         </Route>
       </Switch>
     </div>

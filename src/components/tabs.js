@@ -64,10 +64,10 @@ const useStyles = makeStyles((theme) => ({
 
  const LectureTab = (props)=>{
    const {lectureList} = props;
+   console.log("lecturelist in tabs",lectureList);
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
-  console.log(props);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
               You have been invited to :
             </Typography>
 
-            {lectureList.map((item)=>(
+            {lectureList.docs.map((item)=>(
                 
                 <InviteCard _id={item._id} name={item.name} streamid={item.streamid}/>
             ))}

@@ -10,7 +10,8 @@ const useStyles = makeStyles({
   root: {
     minWidth: 275,
     marginTop:'5%',
-    padding:'2% '
+    padding:'2%',
+
   },
   bullet: {
     display: 'inline-block',
@@ -43,7 +44,7 @@ export default function SimpleCard(props) {
       </CardContent>
       <CardActions >
        {/* <a href="/advertising" style={{textDecoration:'none'}}> */}
-       <Button onclick="console.log('The link was clicked.'); return false"style={{align:"left",backgroundImage:'linear-gradient(180deg, #01ab98, #59b860)',float:'left',width:'25%'}}>Join</Button>
+       <Button style={{align:"left",backgroundImage:'linear-gradient(180deg, #01ab98, #59b860)',float:'left',width:'25%'}}>Join</Button>
        {/* </a> */}
       </CardActions>
     </Paper>
